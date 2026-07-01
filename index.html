@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brown Fox — ATM, Vending &amp; Wholesale Supply | Midwest</title>
+<meta name="description" content="Brown Fox provides ATM placement, vending solutions, and wholesale supply for businesses across South Dakota and the Midwest. Owner-operated, reliable, no cost to host." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --espresso: #131417;      /* darkest panels: area, footer, icons */
+    --espresso-soft: #1f2125;
+    --gold: #ca9c52;
+    --gold-light: #e2c485;
+    --cream: #1b1d20;          /* page background (charcoal) */
+    --cream-2: #24272b;        /* subtle raised fills */
+    --ink: #eae7e1;            /* primary text */
+    --muted: #9a958c;          /* secondary text */
+    --line: #33373d;           /* borders */
+    --white: #232629;          /* card surface */
+    --shadow: 0 22px 55px -20px rgba(0, 0, 0, 0.65);
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+  .accent { color: var(--gold); }
+
+  /* NAV */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(27, 29, 32, 0.82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.35rem; letter-spacing: -0.02em; }
+  .brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+  .nav-links { display: flex; gap: 34px; align-items: center; }
+  .nav-links a { font-size: 0.93rem; font-weight: 500; color: var(--muted); transition: color .2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: #17181b !important; padding: 10px 20px;
+    border-radius: 100px; font-weight: 600 !important; font-size: 0.9rem !important;
+    transition: transform .2s, background .2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 6px; }
+  .menu-btn span { display: block; width: 24px; height: 2px; background: var(--gold); margin: 5px 0; transition: .3s; }
+
+  /* HERO */
+  .hero { position: relative; overflow: hidden; padding: 92px 0 104px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(1100px 500px at 85% -8%, rgba(185, 137, 63, 0.13), transparent 60%),
+      radial-gradient(700px 400px at 5% 110%, rgba(42, 33, 27, 0.06), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; max-width: 780px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); background: var(--cream-2); border: 1px solid var(--line);
+    padding: 7px 15px; border-radius: 100px; margin-bottom: 26px;
+  }
+  .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(185,137,63,.18); }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); margin-bottom: 24px; }
+  .hero h1 .light { color: var(--muted); }
+  .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin-bottom: 38px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: 1rem;
+    padding: 15px 30px; border-radius: 100px; transition: transform .2s, box-shadow .2s, background .2s; cursor: pointer;
+  }
+  .btn-primary { background: var(--gold); color: #17181b; box-shadow: var(--shadow); }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* strip */
+  .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); }
+  .strip-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 26px 0; }
+  .strip-item { display: flex; align-items: center; gap: 12px; font-weight: 500; color: var(--espresso-soft); font-size: 0.98rem; }
+  .strip-item svg { width: 22px; height: 22px; color: var(--gold); flex-shrink: 0; }
+
+  /* SECTION */
+  section { padding: 96px 0; }
+  .section-head { max-width: 640px; margin-bottom: 56px; }
+  .section-head .kicker { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .section-head h2 { font-size: clamp(2rem, 4vw, 2.9rem); margin-bottom: 16px; }
+  .section-head p { font-size: 1.1rem; color: var(--muted); }
+
+  /* SERVICES */
+  .services { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .svc-card {
+    display: block; background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 38px 32px; transition: transform .25s, box-shadow .25s, border-color .25s;
+    position: relative; overflow: hidden; color: inherit;
+  }
+  .svc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--gold-light); }
+  .svc-more { display: inline-flex; align-items: center; gap: 7px; margin-top: 22px; font-size: 0.9rem; font-weight: 600; color: var(--gold); }
+  .svc-more svg { width: 15px; height: 15px; transition: transform .2s; }
+  .svc-card:hover .svc-more svg { transform: translateX(4px); }
+  .svc-icon {
+    width: 54px; height: 54px; border-radius: 13px; display: grid; place-items: center;
+    background: linear-gradient(140deg, var(--espresso), var(--espresso-soft)); margin-bottom: 24px;
+  }
+  .svc-icon svg { width: 27px; height: 27px; color: var(--gold-light); }
+  .svc-card h3 { font-size: 1.42rem; margin-bottom: 12px; }
+  .svc-card p { color: var(--muted); font-size: 0.98rem; margin-bottom: 20px; }
+  .svc-list { list-style: none; }
+  .svc-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; color: #c2bcb1; margin-bottom: 9px; }
+  .svc-list li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
+
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .why-card { padding: 32px 26px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); }
+  .why-num { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--gold); font-weight: 600; margin-bottom: 14px; }
+  .why-card h3 { font-size: 1.15rem; margin-bottom: 9px; }
+  .why-card p { font-size: 0.93rem; color: var(--muted); }
+
+  /* AREA */
+  .area { background: var(--espresso); color: var(--ink); position: relative; overflow: hidden; }
+  .area::before { content: ""; position: absolute; inset: 0; background: radial-gradient(800px 400px at 90% 10%, rgba(185,137,63,.18), transparent 60%); }
+  .area-inner { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
+  .area .kicker { color: var(--gold-light); }
+  .area h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 18px; }
+  .area p { color: rgba(250,247,242,.72); font-size: 1.08rem; margin-bottom: 26px; }
+  .area-regions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .region-chip { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.18); padding: 10px 18px; border-radius: 100px; font-size: 0.92rem; font-weight: 500; color: var(--ink); }
+  .area-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat { background: rgba(250,247,242,.05); border: 1px solid rgba(250,247,242,.12); border-radius: var(--radius); padding: 26px 22px; }
+  .stat .big { font-family: 'Fraunces', serif; font-size: 2.1rem; color: var(--gold-light); font-weight: 600; }
+  .stat .lbl { font-size: 0.88rem; color: rgba(250,247,242,.6); margin-top: 4px; }
+
+  /* CONTACT */
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .contact-card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 44px 40px; box-shadow: var(--shadow); }
+  .contact-row { display: flex; align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-ic { width: 46px; height: 46px; border-radius: 12px; background: var(--cream-2); display: grid; place-items: center; flex-shrink: 0; }
+  .contact-ic svg { width: 22px; height: 22px; color: var(--gold); }
+  .contact-row .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; }
+  .contact-row .val { font-size: 1.12rem; font-weight: 600; color: var(--ink); }
+  .contact-row .val:hover { color: var(--gold); }
+  .qr-card { display: flex; align-items: center; gap: 22px; margin-top: 26px; background: var(--cream-2); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; }
+  .qr-code { background: #fff; padding: 10px; border-radius: 12px; width: 128px; height: 128px; flex-shrink: 0; display: grid; place-items: center; }
+  .qr-code img, .qr-code canvas { width: 108px !important; height: 108px !important; display: block; }
+  .qr-info .label { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+  .qr-info h3 { font-size: 1.15rem; margin-bottom: 5px; }
+  .qr-info p { font-size: 0.9rem; color: var(--muted); }
+  @media (max-width: 460px) { .qr-card { flex-direction: column; text-align: center; } }
+
+  /* FOOTER */
+  footer { background: var(--espresso); color: rgba(250,247,242,.6); padding: 48px 0 40px; }
+  .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+  .foot-brand { display: flex; align-items: center; gap: 12px; font-family: 'Fraunces', serif; font-size: 1.25rem; color: var(--ink); font-weight: 600; }
+  .foot-brand svg { width: 30px; height: 30px; }
+  .foot-inner .small { font-size: 0.85rem; }
+
+  @media (max-width: 900px) {
+    .svc-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .area-inner, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .menu-btn { display: block; }
+    .why-grid { grid-template-columns: 1fr; }
+    .area-visual { grid-template-columns: 1fr 1fr; }
+    section { padding: 68px 0; }
+    .hero { padding: 64px 0 74px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- fox logo mark, reused -->
+<svg style="display:none">
+  <symbol id="fox" viewBox="0 0 100 100">
+    <path fill="#a86c38" fill-rule="evenodd" d="
+      M26 10
+      C 28 22, 30 28, 36 32
+      C 41 26, 46 21, 51 13
+      L 57 8
+      C 59 20, 61 28, 67 33
+      C 79 38, 89 45, 96 53
+      C 90 57, 82 58, 74 57
+      C 68 56, 63 58, 59 63
+      C 61 70, 57 79, 50 85
+      C 52 75, 47 72, 43 77
+      C 45 67, 40 64, 34 69
+      C 36 59, 31 56, 25 59
+      C 20 51, 18 35, 22 21
+      C 23 17, 24 13, 26 10
+      Z
+      M60 42 C 63 39, 69 39, 72 42 C 69 46, 63 46, 60 42 Z
+    "/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand"><svg class="accent"><use href="#fox"/></svg> Brown&nbsp;Fox</a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Brown Fox</a>
+      <a href="#area">Coverage</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display = (getComputedStyle(document.querySelector('.nav-links')).display==='none'?'flex':'none')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow"><span class="dot"></span> Serving businesses across the Midwest</span>
+      <h1>Cash access, on-site retail, and supply —<br><span class="light">handled for you.</span></h1>
+      <p class="lead">Brown Fox places and services ATMs and vending equipment, and sources wholesale product, so your business earns more from the space you already have — with zero hassle and no cost to host.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Partner With Us
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> No cost to the host business</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg> Competitive revenue share</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Fast, local, reliable service</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z"/></svg> Owner-operated &amp; accountable</div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">What We Do</div>
+        <h2>Three ways we put your space to work</h2>
+        <p>Whether you're driving foot traffic, adding convenience for your customers, or sourcing product, Brown Fox delivers turnkey solutions and stands behind every one.</p>
+      </div>
+      <div class="svc-grid">
+
+        <a class="svc-card" href="atm.html" target="_blank" rel="noopener">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+          <h3>ATM Placement &amp; Service</h3>
+          <p>Reliable cash access for your customers, fully managed by us — from install to cash loading to upkeep.</p>
+          <ul class="svc-list">
+            <li>Placement at no cost to the host</li>
+            <li>Revenue share on every transaction</li>
+            <li>Cash loading, maintenance &amp; monitoring</li>
+            <li>Modern, compliant, low-footprint units</li>
+          </ul>
+          <span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="svc-card" href="vending.html" target="_blank" rel="noopener">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h2M9 10h2M15 6v6M9 18h6"/></svg></div>
+          <h3>Vending Solutions</h3>
+          <p>Snack, drink, and combination machines stocked to your customers' tastes, with cashless payment built in.</p>
+          <ul class="svc-list">
+            <li>Snack, beverage &amp; combo machines</li>
+            <li>Card &amp; tap payment enabled</li>
+            <li>Routine restocking &amp; servicing</li>
+            <li>Product mix tailored to your traffic</li>
+          </ul>
+          <span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="svc-card" href="wholesale.html" target="_blank" rel="noopener">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18l-1.5 12a2 2 0 0 1-2 1.7H6.5a2 2 0 0 1-2-1.7L3 7ZM8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
+          <h3>Wholesale Supply</h3>
+          <p>Sourcing and supply for businesses that move product — leveraging established distribution relationships.</p>
+          <ul class="svc-list">
+            <li>Beverages, snacks &amp; consumables</li>
+            <li>Volume-based pricing</li>
+            <li>Dependable, scheduled fulfillment</li>
+            <li>Inquiries welcome — let's talk needs</li>
+          </ul>
+          <span class="svc-more">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Why Brown Fox</div>
+        <h2>Straightforward partners who show up</h2>
+        <p>No corporate runaround, no long-term traps. Just dependable equipment and service from an operator who answers the phone.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <h3>No Cost to Host</h3>
+          <p>We supply, install, and service the equipment. You provide the space and earn a share — with nothing out of pocket.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <h3>Owner-Operated</h3>
+          <p>You deal directly with the person responsible. Fast decisions, real accountability, and service that actually happens.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <h3>Local &amp; Responsive</h3>
+          <p>Based in the region we serve. When something needs attention, we're close by — not a ticket in a queue three states away.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <h3>Fair Terms</h3>
+          <p>Competitive revenue splits and clear agreements. We win when your location performs, so our incentives line up with yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA -->
+  <section class="area" id="area">
+    <div class="wrap area-inner">
+      <div>
+        <div class="kicker">Coverage</div>
+        <h2>Proudly serving the Midwest</h2>
+        <p>Headquartered in South Dakota, Brown Fox partners with businesses throughout the region — from single-location shops to multi-site operators.</p>
+        <div class="area-regions">
+          <span class="region-chip">South Dakota</span>
+          <span class="region-chip">Northwest Iowa</span>
+          <span class="region-chip">Minnesota</span>
+          <span class="region-chip">Nebraska</span>
+        </div>
+      </div>
+      <div class="area-visual">
+        <div class="stat"><div class="big">3</div><div class="lbl">Service lines under one roof</div></div>
+        <div class="stat"><div class="big">$0</div><div class="lbl">Upfront cost to host businesses</div></div>
+        <div class="stat"><div class="big">4</div><div class="lbl">States across the Midwest</div></div>
+        <div class="stat"><div class="big">1:1</div><div class="lbl">Direct, owner-level service</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <div class="kicker" style="color:var(--gold);font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;">Get in Touch</div>
+        <h2 style="font-size:clamp(2rem,4vw,2.8rem);margin-bottom:16px;">Let's find the right fit for your space</h2>
+        <p style="font-size:1.1rem;color:var(--muted);">Interested in hosting an ATM or vending equipment, or have a supply need? Reach out directly — we'll talk through your location and put together a plan that works.</p>
+        <div class="qr-card">
+          <div class="qr-code"><div id="qr"></div></div>
+          <div class="qr-info">
+            <div class="label">Digital Business Card</div>
+            <h3>Scan to save my contact</h3>
+            <p>Point your phone camera here to add Reggie Slaba to your contacts instantly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row">
+          <div class="contact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div><div class="label">Call or Text</div><a class="val" href="tel:+16057708060">(605) 770-8060</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></div>
+          <div><div class="label">Email</div><a class="val" href="mailto:reggielslaba@gmail.com">reggielslaba@gmail.com</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.4 8 12 8 12s8-6.6 8-12a8 8 0 0 0-8-8Z"/></svg></div>
+          <div><div class="label">Based In</div><div class="val" style="cursor:default;">South Dakota · Serving the Midwest</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-brand"><svg class="accent"><use href="#fox"/></svg> Brown Fox</div>
+    <div class="small">ATM · Vending · Wholesale Supply — Serving the Midwest</div>
+    <div class="small">© 2026 Brown Fox LLC. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  (function () {
+    var vcard = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'FN:Reggie Slaba',
+      'ORG:Brown Fox',
+      'TITLE:ATM, Vending & Wholesale Supply',
+      'TEL;TYPE=CELL:+16057708060',
+      'EMAIL:reggielslaba@gmail.com',
+      'END:VCARD'
+    ].join('\n');
+    if (window.QRCode) {
+      new QRCode(document.getElementById('qr'), {
+        text: vcard, width: 108, height: 108,
+        colorDark: '#131417', colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+  })();
+</script>
+</body>
+</html>
