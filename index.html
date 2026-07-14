@@ -184,7 +184,17 @@
   }
   @media (max-width: 640px) {
     .nav-links { display: none; }
+    .nav-links.open {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      position: absolute; top: 74px; left: 0; right: 0; width: 100%;
+      background: rgba(27,29,32,0.98); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line); padding: 16px 20px 22px;
+    }
+    .nav-links.open a { font-size: 1.05rem; padding: 9px 12px; }
+    .nav-links.open .nav-cta { margin-top: 8px; }
     .menu-btn { display: block; }
+    .strip-inner { justify-content: center; }
+    .strip-item { width: 100%; justify-content: center; text-align: center; }
     .why-grid { grid-template-columns: 1fr; }
     .area-visual { grid-template-columns: 1fr 1fr; }
     section { padding: 68px 0; }
@@ -221,14 +231,14 @@
 <header>
   <div class="wrap nav">
     <a href="#top" class="brand"><svg class="accent"><use href="#fox"/></svg> Brown&nbsp;Fox</a>
-    <nav class="nav-links">
+    <nav class="nav-links" onclick="this.classList.remove('open')">
       <a href="#services">Services</a>
       <a href="#why">Why Brown Fox</a>
       <a href="#area">Process</a>
       <a href="pricing.html">Pricing</a>
       <a href="pricing.html" class="nav-cta">Start a Project</a>
     </nav>
-    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').style.display = (getComputedStyle(document.querySelector('.nav-links')).display==='none'?'flex':'none')">
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
   </div>
