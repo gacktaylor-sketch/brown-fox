@@ -287,6 +287,8 @@
   const SUPABASE_KEY = 'sb_publishable_9zW3mBTHzTidZbfVUReifw_e7DYaPUm';
   const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
+  const WEB3FORMS_KEY = '959b30ff-c48b-4495-ba4e-145d9631f57d';
+
   // Pre-select a plan when arriving from a pricing card
   window.pickPlan = function (val) {
     const sel = document.getElementById('rf-plan');
@@ -329,6 +331,27 @@
       submitBtn.disabled = false;
       submitBtn.innerHTML = original;
       return;
+    }
+
+    // Email notification (best-effort — the submission is already saved above)
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: 'New quote request — Brown Fox',
+          from_name: 'Brown Fox Website',
+          replyto: payload.email,
+          name: payload.name,
+          email: payload.email,
+          phone: payload.phone || '(none)',
+          plan: payload.plan,
+          message: payload.message || '(none)',
+        }),
+      });
+    } catch (err) {
+      /* email failed but the request is safely stored in Supabase */
     }
 
     form.style.display = 'none';
