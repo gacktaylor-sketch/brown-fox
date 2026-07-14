@@ -173,6 +173,10 @@
   .foot-brand svg { width: 30px; height: 30px; }
   .foot-inner .small { font-size: 0.85rem; }
 
+  /* mobile overflow guards: let grid items shrink below content, wrap long tokens */
+  .contact-inner > *, .area-inner > * { min-width: 0; }
+  .contact-row .val { overflow-wrap: anywhere; }
+
   @media (max-width: 900px) {
     .svc-grid { grid-template-columns: 1fr; }
     .why-grid { grid-template-columns: repeat(2, 1fr); }
