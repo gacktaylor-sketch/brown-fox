@@ -1,0 +1,58 @@
+/* Type on ledger paper — the same look as the app, so a player following a link
+   out of the store lands somewhere that is obviously the same thing. */
+:root { color-scheme: light; }
+
+body {
+  margin: 0;
+  background: #e9dfc4;
+  color: #241b10;
+  font: 16px/1.65 Palatino, "Palatino Linotype", Georgia, serif;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 44px 22px 90px; }
+
+.rubric {
+  font-size: 11px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #7c6a4f;
+}
+
+h1 { font-size: 32px; margin: 6px 0 2px; color: #3d5a34; letter-spacing: -0.01em; }
+h2 { font-size: 19px; margin: 34px 0 8px; color: #3d5a34; }
+
+.eff { color: #7c6a4f; font-size: 14px; margin-bottom: 26px; }
+
+.rule { height: 2px; background: #3d5a34; margin-top: 12px; }
+.rule-thin { height: 1px; background: #3d5a34; opacity: 0.6; margin: 2px 0 26px; }
+
+a { color: #3d5a34; }
+a:hover { color: #8f2b1c; }
+
+ul { padding-left: 20px; }
+li { margin: 6px 0; }
+
+.note {
+  background: #e2d5b4;
+  border: 1px solid #c3b183;
+  padding: 14px 16px;
+  margin: 22px 0;
+}
+
+code {
+  background: #e2d5b4;
+  padding: 1px 6px;
+  font-size: 14px;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+
+nav { margin: 26px 0 0; font-size: 14px; }
+nav a { margin-right: 16px; }
+
+footer {
+  margin-top: 48px;
+  color: #7c6a4f;
+  font-size: 13px;
+  border-top: 1px solid #c3b183;
+  padding-top: 18px;
+}

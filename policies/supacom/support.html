@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supacom — Support</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 720px; margin: 40px auto; padding: 0 20px;
+         font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         color: #111; background: #fff; }
+  @media (prefers-color-scheme: dark){ body{ color:#e6e6e6; background:#0b0b0c; } a{ color:#4ade80; } }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 19px; margin-top: 32px; }
+  h3 { font-size: 17px; margin-top: 24px; margin-bottom: 4px; }
+  .updated { color: #888; font-size: 14px; margin-bottom: 24px; }
+  a { color: #16a34a; }
+  .contact { border: 1px solid #d4d4d8; border-radius: 8px; padding: 16px 20px; margin: 24px 0; }
+  @media (prefers-color-scheme: dark){ .contact{ border-color:#33333a; } }
+</style>
+</head>
+<body>
+  <h1>Supacom — Support</h1>
+  <div class="updated">Last updated: July 16, 2026</div>
+
+  <p>Supacom is a companion app for <a href="https://supabase.com">Supabase</a>. It lets
+  you check project health and usage, browse and edit table rows, view auth users, and
+  read logs from your phone.</p>
+
+  <div class="contact">
+    <strong>Need help?</strong><br>
+    Email <a href="mailto:gacktaylor@gmail.com">gacktaylor@gmail.com</a><br>
+    <span style="color:#888; font-size:14px;">We aim to respond within 2 business days.</span>
+  </div>
+
+  <h2>Getting started</h2>
+
+  <h3>Connecting your Supabase account</h3>
+  <p>Supacom needs a Supabase access token to reach your projects. Create one from your
+  Supabase account page at
+  <a href="https://supabase.com/dashboard/account/tokens">supabase.com/dashboard/account/tokens</a>,
+  then paste it into Supacom when prompted. The token is stored only on your device, in
+  the iOS Keychain.</p>
+
+  <h3>Removing your token</h3>
+  <p>Sign out from within the app to erase the stored token from your device. You can also
+  revoke the token itself at any time from the Supabase dashboard page linked above, which
+  immediately cuts off access.</p>
+
+  <h2>Common questions</h2>
+
+  <h3>The app says my token is invalid</h3>
+  <p>Access tokens can be revoked or expire. Generate a fresh one from the Supabase
+  dashboard and sign in again. Make sure you copied the entire token with no extra spaces.</p>
+
+  <h3>I don't see all of my projects</h3>
+  <p>Supacom shows the projects your access token can reach. If a project belongs to an
+  organization you're not a member of, it won't appear. Check your organization membership
+  in the Supabase dashboard.</p>
+
+  <h3>My data isn't loading or looks out of date</h3>
+  <p>Pull to refresh on any screen. If it persists, confirm the project is running and
+  healthy in the Supabase dashboard — Supacom reflects whatever Supabase reports.</p>
+
+  <h3>Is Supacom affiliated with Supabase?</h3>
+  <p>No. Supacom is an independent third-party client. It is not made, endorsed, or
+  supported by Supabase. It talks to Supabase's public API using credentials you provide.</p>
+
+  <h2>Reporting a bug or requesting a feature</h2>
+  <p>Email <a href="mailto:gacktaylor@gmail.com">gacktaylor@gmail.com</a> with your device
+  model, iOS version, and app version (shown in Settings), plus what you expected to happen
+  and what happened instead. Please don't include your access token in any message.</p>
+
+  <h2>Privacy</h2>
+  <p>Supacom collects no personal data. See the
+  <a href="./index.html">Privacy Policy</a> for details.</p>
+</body>
+</html>
