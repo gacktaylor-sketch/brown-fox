@@ -1,0 +1,57 @@
+/* Infrared sensor feed — the same look as the app, so a player following a link
+   out of the store lands somewhere that is obviously the same thing. */
+:root { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: #0a0d0b;
+  color: #cfe3d6;
+  font: 16px/1.65 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 44px 22px 90px; }
+
+.rubric {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #7d8f85;
+}
+
+h1 { font-size: 30px; margin: 6px 0 2px; color: #7fe0a0; letter-spacing: 2px; }
+h2 { font-size: 18px; margin: 34px 0 8px; color: #7fe0a0; letter-spacing: 1px; }
+
+.eff { color: #7d8f85; font-size: 13px; margin-bottom: 26px; letter-spacing: 1px; }
+
+.rule { height: 2px; background: #7fe0a0; margin-top: 12px; }
+.rule-thin { height: 1px; background: #3f574a; margin: 2px 0 26px; }
+
+a { color: #7fe0a0; }
+a:hover { color: #ffb300; }
+
+ul { padding-left: 20px; }
+li { margin: 6px 0; }
+
+.note {
+  background: #121a15;
+  border: 1px solid #2f4a3a;
+  padding: 14px 16px;
+  margin: 22px 0;
+}
+
+code {
+  background: #121a15;
+  padding: 1px 6px;
+  font-size: 14px;
+}
+
+nav { margin: 26px 0 0; font-size: 14px; }
+nav a { margin-right: 16px; }
+
+footer {
+  margin-top: 48px;
+  color: #7d8f85;
+  font-size: 13px;
+  border-top: 1px solid #24352c;
+  padding-top: 18px;
+}
