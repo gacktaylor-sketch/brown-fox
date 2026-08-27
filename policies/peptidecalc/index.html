@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PeptideCalc — Support</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="rubric">PeptideCalc</div>
+  <h1>Support</h1>
+  <div class="rule"></div>
+  <div class="rule-thin"></div>
+  <div class="eff">Reconstitution calculator and private log</div>
+
+  <p>Answers to the things people ask. If yours is not here, email
+  <a href="mailto:contact@brownfoxgo.com">contact@brownfoxgo.com</a> and you will get a
+  reply from a person.</p>
+
+  <div class="warn">
+    <strong>PeptideCalc is not medical advice.</strong> It does arithmetic on numbers you
+    enter. It never suggests a compound, a dose, or a protocol. Talk to a licensed
+    healthcare professional before making any decision about anything you put into your
+    body.
+  </div>
+
+  <div class="note">
+    <strong>Contact:</strong>
+    <a href="mailto:contact@brownfoxgo.com">contact@brownfoxgo.com</a><br>
+    There is no account and no server &mdash; so there is no password to reset and nothing
+    to log in to.
+  </div>
+
+  <h2>How does the calculation work?</h2>
+  <p>Concentration is the vial&rsquo;s strength divided by the volume of diluent you added.
+  Your dose divided by that concentration gives the volume to draw, which the App then
+  converts to marks on the syringe you picked. It shows the concentration and the volume
+  alongside the units so you can check every step by hand.</p>
+
+  <h2>Why do I have to pick a syringe before I see anything?</h2>
+  <p>Because the same volume is a different number of units on a U-100 barrel than on a
+  U-40, and showing a mark before knowing which barrel you are holding would be a good way
+  to get someone hurt. Pick the barrel that matches the one in your hand &mdash; it is
+  printed on the syringe.</p>
+
+  <h2>Is the math checked?</h2>
+  <p>Yes. The calculation lives in its own module with an automated test suite that runs on
+  every build. That said, <strong>please check the result yourself before you act on it</strong>.
+  Software can be wrong and a value can be mistyped, and here a small error is a big one.</p>
+
+  <h2>How do blends work?</h2>
+  <p>If a vial holds more than one compound, every draw carries all of them in the ratio
+  they were mixed in &mdash; you cannot draw more of one without drawing more of the other.
+  The App shows you the dose of each compound in the draw, and changing one updates the
+  rest to match the vial&rsquo;s ratio. To change the ratio, change the milligrams in the
+  vial or use separate vials.</p>
+
+  <h2>Does my information leave my phone?</h2>
+  <p>Your vials, doses, cycles, notes and weights never leave your device. The only thing
+  sent anywhere is the name of a compound you look up, which goes to PubChem and openFDA
+  &mdash; two public US government databases &mdash; to fetch their public information.
+  If you would rather nothing left at all, turn off network access for the App or use
+  Airplane Mode. Everything except the reference lookups works offline. Details in the
+  <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2>Why does the App not tell me what a compound does, or what dose to use?</h2>
+  <p>Deliberately. Most of these substances are not approved for human use, which means no
+  regulator has reviewed any claim about what they do in people. We show public chemistry
+  and the public regulatory record, and we leave the rest to you and your clinician. It is
+  a calculator, not an adviser, and it will stay one.</p>
+
+  <h2>The regulatory information looks out of date</h2>
+  <p>Each entry carries the date it was compiled, and the list is loaded fresh rather than
+  baked into the App, so it can be corrected without an update. If you spot something
+  wrong or missing, email us with a link to the agency document and it will be fixed.</p>
+
+  <h2>I bought the unlock and it is not showing</h2>
+  <p>Tap <strong>Restore Purchases</strong> in the App. The unlock is tied to the Apple ID
+  that bought it, so make sure you are signed in with the same one. If it still does not
+  appear, email us with the date of purchase.</p>
+
+  <h2>I lost my log</h2>
+  <p>Your log is stored only on your device and we have no copy, because we run no servers.
+  Deleting the App, or clearing its data, removes it permanently and we cannot recover it.
+  The purchase can be restored; the log cannot.</p>
+
+  <h2>How do I delete everything?</h2>
+  <p>Delete the App. Everything it holds goes with it. Nothing is kept anywhere else.</p>
+
+  <h2>Can I use this for my patients?</h2>
+  <p>The App is a personal tool and is not a medical device. If you are a licensed
+  professional, any clinical use is yours to take responsibility for, under your own
+  judgment and your own verification.</p>
+
+  <nav>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+  </nav>
+
+  <footer>
+    PeptideCalc &middot; Brown Fox LLC &middot;
+    <a href="mailto:contact@brownfoxgo.com">contact@brownfoxgo.com</a>
+  </footer>
+</div>
+</body>
+</html>
