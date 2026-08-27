@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "updated": "2026-08-27",
+  "disclaimer": "Regulatory record only. Reproduces public FDA actions and their dates. Not medical advice, not a safety assessment, and not a statement that any compound is safe or appropriate to use.",
+  "sources": {
+    "503a": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-nominated-use-compounding-under-section-503a-federal-food-drug-and-cosmetic-act",
+    "pcac": "https://www.fda.gov/advisory-committees/advisory-committee-calendar/july-23-24-2026-meeting-pharmacy-compounding-advisory-committee-07232026"
+  },
+  "compounds": {
+    "bpc157": {
+      "events": [
+        { "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" },
+        { "date": "2026-07-23", "text": "Pharmacy Compounding Advisory Committee voted 8-6 in favor of adding to the 503A Bulks List. An advisory vote is a recommendation; FDA has not issued a final decision.", "source": "pcac" }
+      ]
+    },
+    "tb500":      { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "ll37":       { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "dihexa":     { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "dsip":       { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list. Listed as emideltide.", "source": "503a" }] },
+    "epitalon":   { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "ghkcu":      { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list (injectable only).", "source": "503a" }] },
+    "kpv":        { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "pegmgf":     { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "melanotanii":{ "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "motsc":      { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] },
+    "semax":      { "events": [{ "date": "2026-04-15", "text": "Removed from the FDA 503A bulk drug substances Category 2 list.", "source": "503a" }] }
+  }
+}
